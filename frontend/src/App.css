@@ -1,21 +1,29 @@
+
+/* #B1E5F8; */
+/* #51D5F4 */
+/* #D5E1E0 */
+/* #E8F355 */
+/* #515354 */
+
 .app {
-  border: 2px solid pink;
   height: 100vh;
   margin: 0 auto;
 }
 
 .app-header {
   background-color: #515354;
-  border: 2px solid green;
-  color: #B1E5F8;
-  font-size: 2rem;
+  border-bottom: 2px solid #51D5F4;
+  color: #51D5F4;
+  font-size: 1.25rem;
+  padding: 0 10px;
+}
+
+.app-logo {
+  height: 5vmin;
+  margin-right: 5px;
+  pointer-events: none;
 }
 
 .app-main {
-  border: 2px solid blue;
   margin: 0 auto;
 }
-
-/* #51D5F4 */
-/* #D5E1E0 */
-/* #E8F355 */
