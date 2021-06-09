@@ -2,12 +2,17 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <p>
           Race Stats Tracker
         </p>
       </header>
+      <main className="app-main">
+        <p>
+          Main content goes here
+        </p>
+      </main>
     </div>
   );
 }
