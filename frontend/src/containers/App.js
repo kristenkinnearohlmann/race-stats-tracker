@@ -1,19 +1,20 @@
 import './App.css';
-// import logo from '../logo.svg'
 import Header from '../components/Header'
+import Home from '../components/Home'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="app">
-      <header className="app-header">
-        <Header />
-      </header>
-      <main className="app-main">
-        <p>
-          Main content goes here
-        </p>
-      </main>
-    </div>
+    <Router>
+      <div className="app">
+        <header className="app-header">
+          <Header />
+        </header>
+        <main className="app-main">
+          <Route exact path="/" component={Home} />
+        </main>
+      </div>
+    </Router>
   );
 }
 
