@@ -13,3 +13,8 @@
 .app-header-container > div:last-child {
   margin-left: auto;
 }
+
+a {
+  color: #51D5F4;
+  text-decoration: none;
+}
