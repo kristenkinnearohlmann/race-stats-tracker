@@ -1,0 +1,15 @@
+.app-header-container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px;
+}
+
+.app-logo {
+  height: 5vmin;
+  margin-right: 5px;
+  pointer-events: none;
+}
+
+.app-header-container > div:last-child {
+  margin-left: auto;
+}
