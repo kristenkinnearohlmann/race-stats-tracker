@@ -1,9 +1,12 @@
 import React from 'react'
+import HeroVideo from '../components/HeroVideo'
+import HomeMsg from '../components/HomeMsg'
 
 const Home = () => {
     return (
         <div>
-            <p>127.0.0.1</p>
+            <HeroVideo />
+            <HomeMsg />
         </div>
     )
 }
