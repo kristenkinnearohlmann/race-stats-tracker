@@ -16,21 +16,21 @@ export const fetchRaceDistances = () => {
 export const fetchRacesByDistance = raceDistanceId => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
-
+        console.log(raceDistanceId)
         let url;
-        
-        if (raceDistanceId === 0) {
-            url = ""
-            // url: 'http://localhost:3001/races'
-        } else {
-            url = ""
-            // url: ''http://localhost:3001/race_distances/:id/races'
-        }
 
-        fetch(url)
-            .then(response => response.json())
-            .then(responseJSON => {
-                dispatch( {type: 'SHOW_RACES', races: responseJSON} )
-            })
+        // if (raceDistanceId === 0) {
+        //     url = ""
+        //     // url: 'http://localhost:3001/races'
+        // } else {
+        //     url = ""
+        //     // url: ''http://localhost:3001/race_distances/:id/races'
+        // }
+
+        // fetch(url)
+        //     .then(response => response.json())
+        //     .then(responseJSON => {
+        //         dispatch( {type: 'SHOW_RACES', races: responseJSON} )
+        //     })
     }
 }

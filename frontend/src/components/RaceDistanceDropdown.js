@@ -1,12 +1,11 @@
 import React from 'react'
 import './RaceDistanceDropdown.css'
 
-const RaceDistanceDropdown = ({ raceDistances }) => {
+const RaceDistanceDropdown = ({ raceDistances, fetchRacesByDistance }) => {
     return (
         <form>
             <label>Select race distance: </label>
-            {/* add onChange={() => function to get value back up and over to filter} */}
-            <select name="raceDistances" id="raceDistances" onChange={event => console.log(event.target.value)}>
+            <select name="raceDistances" id="raceDistances" onChange={event => fetchRacesByDistance(event.target.value)}>
                 <option value=""></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {

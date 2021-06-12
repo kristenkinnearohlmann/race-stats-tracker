@@ -1,4 +1,4 @@
-const racesReducer = (state = {race_distances: [], loading: false}, action) => {
+const racesReducer = (state = {race_distances: [], races: [], loading: false}, action) => {
     switch (action.type) {
         case 'LOAD_DISTANCES':
             return {
@@ -15,11 +15,16 @@ const racesReducer = (state = {race_distances: [], loading: false}, action) => {
             }
 
         case 'LOAD_RACES':
-            // replace with proper state change
-            return state
+            console.log("Load races")
+            return {
+                ...state,
+                races: [...state.races],
+                loading: true
+            }
 
         case 'SHOW_RACES':
             // replace with proper state change
+            // if -1, clear races array
             return state
 
         default:

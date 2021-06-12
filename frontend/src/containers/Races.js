@@ -1,6 +1,6 @@
 import { React, Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchRaceDistances } from '../actions/racesActions'
+import { fetchRaceDistances, fetchRacesByDistance } from '../actions/racesActions'
 import RaceDistanceDropdown from '../components/RaceDistanceDropdown'
 import RaceList from '../components/RaceList'
 
@@ -13,7 +13,7 @@ class Races extends Component {
     render() {
         return (
             <div>
-                <RaceDistanceDropdown raceDistances={this.props.raceDistances} />
+                <RaceDistanceDropdown raceDistances={this.props.raceDistances} fetchRacesByDistance={this.props.fetchRacesByDistance} />
                 <RaceList />
                 <p>
                     TBD: Race info
@@ -32,7 +32,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchRaceDistances: () => dispatch(fetchRaceDistances())
+        fetchRaceDistances: () => dispatch(fetchRaceDistances()),
+        fetchRacesByDistance: raceDistanceId => dispatch(fetchRacesByDistance(raceDistanceId))
     }
 }
 
