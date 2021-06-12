@@ -12,6 +12,8 @@ class RaceNew extends Component {
 
     componentDidMount() {
         this.props.fetchRaceDistances()
+        console.log("Distances are back...update local state??")
+        console.log(this.props.raceDistances)
     }
 
     render() {

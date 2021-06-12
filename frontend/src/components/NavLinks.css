@@ -13,3 +13,13 @@
 .nav-link-base:hover {
     background-color: #969798;
 }
+
+@media screen and (max-width: 768px) {
+    .nav-link-base {
+        display: inline-block;
+        font-size: 0.75rem;
+        margin: 0 5px 5px 0;
+        padding: 0.55rem;
+        width: 5.25rem;
+    }
+}
