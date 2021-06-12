@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_003419) do
+ActiveRecord::Schema.define(version: 2021_06_12_212647) do
 
   create_table "race_distances", force: :cascade do |t|
     t.string "distance_type"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2021_06_12_003419) do
     t.decimal "distance_kilometers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "race_name"
+    t.string "race_url"
+    t.integer "race_distance_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["race_distance_id"], name: "index_races_on_race_distance_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,4 +38,5 @@ ActiveRecord::Schema.define(version: 2021_06_12_003419) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "races", "race_distances"
 end
