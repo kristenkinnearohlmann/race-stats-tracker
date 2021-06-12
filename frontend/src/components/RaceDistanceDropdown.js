@@ -1,15 +1,12 @@
 import React from 'react'
+import './RaceDistanceDropdown.css'
 
 const RaceDistanceDropdown = ({ raceDistances }) => {
-    console.log(raceDistances)
-    console.log(raceDistances.forEach(distance => {
-        console.log(distance.id)
-        console.log(distance.distance_type)
-    }))
     return (
         <form>
+            <label>Select race distance: </label>
             <select name="raceDistances" id="raceDistances">
-                <option value="">Select distance</option>
+                <option value=""></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {
                     return (

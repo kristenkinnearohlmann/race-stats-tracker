@@ -1,0 +1,10 @@
+form {
+    margin: 5px;
+}
+
+select {
+    background-color: #969798;
+    border-radius: 5px;
+    padding: 0.25rem;
+    width: 10rem;
+}
