@@ -8,7 +8,8 @@ class RaceNew extends Component {
     state = {
         name: '',
         racedistance_id: -1,
-        race_date: ''
+        race_date: '',
+        elapsed_time: ''
     }
 
     componentDidMount() {
@@ -21,9 +22,12 @@ class RaceNew extends Component {
         },this.quick)
     }
 
+    // DEL: remove this function the call to it from handleOnChange
     quick = () => {
         console.log(this.state)
     }
+
+    // TODO: add handleOnSubmit
 
     render() {
         return (
@@ -31,11 +35,11 @@ class RaceNew extends Component {
                 <p>Add a race to your race list</p>
                 <form className="race-new-form">
                     <p>
-                        <label>Race name: </label><br/>
+                        <label>Event name: </label><br/>
                         <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
                     </p>
                     <p>
-                        <label>Race distance: </label><br/>
+                        <label>Distance:</label><br/>
                         <select name="racedistance_id" id="racedistance_id" value={this.state.racedistance_id} onChange={this.handleOnChange}>
                             <option value="-1"></option>
                             <option value="0">All</option>
@@ -47,8 +51,12 @@ class RaceNew extends Component {
                         </select>
                     </p>
                     <p>
-                        <label>Race date: </label><br/>
+                        <label>Event date: </label><br/>
                         <input type="date" name="race_date" id="race_date" value={this.state.race_date} onChange={this.handleOnChange} />
+                    </p>
+                    <p>
+                        <label>Elapsed time:</label><br/>
+                        <input type="text" name="elapsed_time" id="elapsed_time" placeholder="00:00:00" value={this.state.elapsed_time} onChange={this.handleOnChange} />
                     </p>
                 </form>
             </div>
