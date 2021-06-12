@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchRaceDistances, fetchRacesByDistance } from '../actions/racesActions'
 import RaceDistanceDropdown from '../components/RaceDistanceDropdown'
 import RaceList from '../components/RaceList'
+import './Races.css'
 
 class Races extends Component {
 
@@ -12,7 +13,7 @@ class Races extends Component {
     
     render() {
         return (
-            <div>
+            <div className="races-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} fetchRacesByDistance={this.props.fetchRacesByDistance} />
                 <RaceList />
                 <p>
