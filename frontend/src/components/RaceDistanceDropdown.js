@@ -6,7 +6,7 @@ const RaceDistanceDropdown = ({ raceDistances }) => {
         <form>
             <label>Select race distance: </label>
             {/* add onChange={() => function to get value back up and over to filter} */}
-            <select name="raceDistances" id="raceDistances">
+            <select name="raceDistances" id="raceDistances" onChange={event => console.log(event.target.value)}>
                 <option value=""></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {

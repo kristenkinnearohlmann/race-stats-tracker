@@ -1,12 +1,11 @@
 export const fetchRaceDistances = () => {
     return (dispatch) => {
-        dispatch( {type: 'LOADING_DISTANCES'} )
+        dispatch( {type: 'LOAD_DISTANCES'} )
 
-        // add fetch and state update
         fetch('http://localhost:3001/race_distances')
             .then(response => response.json())
             .then(responseJSON => {
-                dispatch( {type: 'ADD_DISTANCES', race_distances: responseJSON} )
+                dispatch( {type: 'SHOW_DISTANCES', race_distances: responseJSON} )
             })
     }
 }
@@ -14,3 +13,24 @@ export const fetchRaceDistances = () => {
 // action to receive onChange from RaceDistanceDropdown, 
 // formulate proper URL based on 0 (all) or specific race distance id,
 // populate state, and load a race list component
+export const fetchRacesByDistance = raceDistanceId => {
+    return (dispatch) => {
+        dispatch( {type: 'LOAD_RACES'} )
+
+        let url;
+        
+        if (raceDistanceId === 0) {
+            url = ""
+            // url: 'http://localhost:3001/races'
+        } else {
+            url = ""
+            // url: ''http://localhost:3001/race_distances/:id/races'
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(responseJSON => {
+                dispatch( {type: 'SHOW_RACES', races: responseJSON} )
+            })
+    }
+}
