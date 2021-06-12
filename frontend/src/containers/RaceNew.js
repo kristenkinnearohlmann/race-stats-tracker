@@ -7,13 +7,17 @@ class RaceNew extends Component {
 
     state = {
         name: '',
-        raceDistances: 0
+        race_distance: -1
     }
 
     componentDidMount() {
         this.props.fetchRaceDistances()
-        console.log("Distances are back...update local state??")
-        console.log(this.props.raceDistances)
+    }
+
+    handleOnChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
@@ -23,12 +27,12 @@ class RaceNew extends Component {
                 <form>
                     <p>
                         <label>Race name: </label><br/>
-                        <input type="text" name="name" value={this.state.name} />
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
                     </p>
                     <p>
                         <label>Select race distance: </label><br/>
-                        <select name="raceDistances" id="raceDistances">
-                            <option value=""></option>
+                        <select name="race_distance" id="race_distance" value={this.state.race_distance} onChange={this.handleOnChange}>
+                            <option value="-1"></option>
                             <option value="0">All</option>
                             {this.props.raceDistances.map(distance => {
                                 return (

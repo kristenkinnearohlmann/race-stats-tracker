@@ -15,7 +15,6 @@ const racesReducer = (state = {race_distances: [], races: [], loading: false}, a
             }
 
         case 'LOAD_RACES':
-            console.log("Load races")
             return {
                 ...state,
                 races: [...state.races],

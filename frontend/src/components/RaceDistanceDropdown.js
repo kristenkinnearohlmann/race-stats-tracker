@@ -5,8 +5,8 @@ const RaceDistanceDropdown = ({ raceDistances, fetchRacesByDistance }) => {
     return (
         <form>
             <label>Select race distance: </label>
-            <select name="raceDistances" id="raceDistances" onChange={event => fetchRacesByDistance(event.target.value)}>
-                <option value=""></option>
+            <select name="race_distance" id="race_distance" onChange={event => fetchRacesByDistance(event.target.value)}>
+                <option value="-1" selected></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {
                     return (
