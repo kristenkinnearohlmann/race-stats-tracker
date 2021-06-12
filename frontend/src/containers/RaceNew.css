@@ -5,15 +5,16 @@
 
 .race-new-form {
     font-size: 1rem;
+    width: 90%;
 }
 
-input, select {
+input, select, textarea {
     background-color: #969798;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px 0 0 0;
     padding: 0.25rem;
-    width: 15rem;
+    width: 100%;
 }
 
 input[type="number"] {
@@ -21,11 +22,16 @@ input[type="number"] {
 }
 
 input[type="number"]:last-child {
-    margin-left: 4rem;
+    margin-left: 2.5rem;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+textarea {
+    height: 10rem;
+    resize: none;
 }
