@@ -10,3 +10,7 @@ export const fetchRaceDistances = () => {
             })
     }
 }
+
+// action to receive onChange from RaceDistanceDropdown, 
+// formulate proper URL based on 0 (all) or specific race distance id,
+// populate state, and load a race list component
