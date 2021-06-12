@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user = User.create(email: "focusrunning.kko@gmail.com", password: "abc123", date_of_birth: "1976-01-06", bio: "A runner from Bloomington, MN")
+# # Add user
+user = User.create(email: "focusrunning.kko@gmail.com", password: "abc123", date_of_birth: "1976-01-06", bio: "A runner from Bloomington, MN")
 
 # # Populate race_distances
 RaceDistance.create(distance_type: "1 Mile", distance_miles: 1.0, distance_kilometers: 1.61)
