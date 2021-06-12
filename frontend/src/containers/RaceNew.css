@@ -3,6 +3,14 @@
     margin: 5px 10%;
 }
 
-form {
+.race-new-form {
     font-size: 1rem;
+}
+
+input, select {
+    background-color: #969798;
+    border-radius: 5px;
+    margin: 5px 0 0 0;
+    padding: 0.25rem;
+    width: 15rem;
 }

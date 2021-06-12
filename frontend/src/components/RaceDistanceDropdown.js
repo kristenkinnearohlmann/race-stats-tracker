@@ -3,7 +3,7 @@ import './RaceDistanceDropdown.css'
 
 const RaceDistanceDropdown = ({ raceDistances, fetchRacesByDistance }) => {
     return (
-        <form>
+        <form className="race-distance-form">
             <label>Select race distance: </label>
             <select name="race_distance" id="race_distance" onChange={event => fetchRacesByDistance(event.target.value)}>
                 <option value="-1" selected></option>

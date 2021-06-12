@@ -24,13 +24,13 @@ class RaceNew extends Component {
         return (
             <div className="race-new-wrapper">
                 <p>Add a race to your race list</p>
-                <form>
+                <form className="race-new-form">
                     <p>
                         <label>Race name: </label><br/>
                         <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
                     </p>
                     <p>
-                        <label>Select race distance: </label><br/>
+                        <label>Race distance: </label><br/>
                         <select name="race_distance" id="race_distance" value={this.state.race_distance} onChange={this.handleOnChange}>
                             <option value="-1"></option>
                             <option value="0">All</option>
