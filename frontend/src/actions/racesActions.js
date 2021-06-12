@@ -39,6 +39,27 @@ export const fetchRacesByDistance = raceDistanceId => {
 export const addNewRace = raceObject => {
     return (dispatch) => {
         console.log("addNewRace invoked")
-        console.log(raceObject)
+        const {current_user_id, ...race} = {...raceObject}
+        console.log({
+            "current_user_id": current_user_id,
+            "race": race
+        })
+        const racePostObj = {
+            "current_user_id": current_user_id,
+            "race": race
+        }
+
+        fetch('http://localhost:3001/races', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(racePostObj)
+        })
+            .then(response => response.json())
+            .then(responseJSON => {
+                console.log(responseJSON)
+            })
     }
 }

@@ -6,9 +6,9 @@ import './RaceNew.css'
 class RaceNew extends Component {
 
     state = {
-        current_user: this.props.currentUser.id,
+        current_user_id: this.props.currentUser.id,
         name: '',
-        racedistance_id: -1,
+        race_distance_id: -1,
         race_date: '',
         elapsed_time: '',
         gun_time: '',
@@ -50,7 +50,7 @@ class RaceNew extends Component {
                     </p>
                     <p>
                         <label>Distance</label><br/>
-                        <select name="racedistance_id" id="racedistance_id" value={this.state.racedistance_id} onChange={this.handleOnChange}>
+                        <select name="race_distance_id" id="race_distance_id" value={this.state.race_distance_id} onChange={this.handleOnChange}>
                             <option value="-1"></option>
                             <option value="0">All</option>
                             {this.props.raceDistances.map(distance => {
