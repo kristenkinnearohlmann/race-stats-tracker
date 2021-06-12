@@ -1,0 +1,17 @@
+.about-wrapper {
+    font-size: 1.5rem;
+    margin: 5px 10%;
+}
+
+.about-content-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.about-content-wrapper > div:last-child {
+    margin-left: 10px;
+}
+
+img {
+    height: 75vh;
+}
