@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_212647) do
+ActiveRecord::Schema.define(version: 2021_06_12_215607) do
 
   create_table "race_distances", force: :cascade do |t|
     t.string "distance_type"
@@ -29,6 +29,34 @@ ActiveRecord::Schema.define(version: 2021_06_12_212647) do
     t.index ["race_distance_id"], name: "index_races_on_race_distance_id"
   end
 
+  create_table "user_races", force: :cascade do |t|
+    t.date "race_date"
+    t.time "elapsed_time"
+    t.time "gun_time"
+    t.string "results_url"
+    t.string "bib_nbr"
+    t.string "division_name"
+    t.integer "overall_place"
+    t.integer "overall_finishers"
+    t.integer "gender_place"
+    t.integer "gender_finishers"
+    t.integer "division_place"
+    t.integer "division_finishers"
+    t.text "race_notes"
+    t.integer "age"
+    t.time "pace"
+    t.float "overall_rank"
+    t.float "gender_rank"
+    t.float "division_rank"
+    t.integer "phidippides_points"
+    t.integer "user_id", null: false
+    t.integer "race_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["race_id"], name: "index_user_races_on_race_id"
+    t.index ["user_id"], name: "index_user_races_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -39,4 +67,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_212647) do
   end
 
   add_foreign_key "races", "race_distances"
+  add_foreign_key "user_races", "races"
+  add_foreign_key "user_races", "users"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_races
   resources :races
   resources :race_distances
   resources :users
