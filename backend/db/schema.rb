@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(version: 2021_06_12_212647) do
 
   create_table "race_distances", force: :cascade do |t|
     t.string "distance_type"
-    t.decimal "distance_miles"
-    t.decimal "distance_kilometers"
+    t.float "miles"
+    t.float "kilometers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "races", force: :cascade do |t|
-    t.string "race_name"
-    t.string "race_url"
+    t.string "name"
+    t.string "url"
     t.integer "race_distance_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
