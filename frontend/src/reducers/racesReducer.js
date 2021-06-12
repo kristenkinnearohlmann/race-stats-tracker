@@ -22,7 +22,7 @@ const racesReducer = (state = {race_distances: [], races: [], loading: false}, a
             }
 
         case 'SHOW_RACES':
-            // replace with proper state change
+            // TODO: replace with proper state change
             // if -1, clear races array
             return state
 

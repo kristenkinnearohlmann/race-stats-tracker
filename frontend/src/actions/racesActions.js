@@ -10,6 +10,7 @@ export const fetchRaceDistances = () => {
     }
 }
 
+// TODO: Finish pull and load of races for a user
 // action to receive onChange from RaceDistanceDropdown, 
 // formulate proper URL based on 0 (all) or specific race distance id,
 // populate state, and load a race list component
@@ -32,5 +33,12 @@ export const fetchRacesByDistance = raceDistanceId => {
         //     .then(responseJSON => {
         //         dispatch( {type: 'SHOW_RACES', races: responseJSON} )
         //     })
+    }
+}
+
+export const addNewRace = raceObject => {
+    return (dispatch) => {
+        console.log("addNewRace invoked")
+        console.log(raceObject)
     }
 }

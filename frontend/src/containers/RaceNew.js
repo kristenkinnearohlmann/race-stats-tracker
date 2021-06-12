@@ -1,6 +1,6 @@
 import { React, Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchRaceDistances } from '../actions/racesActions'
+import { fetchRaceDistances, addNewRace } from '../actions/racesActions'
 import './RaceNew.css'
 
 class RaceNew extends Component {
@@ -35,8 +35,7 @@ class RaceNew extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        console.log("I am here")
-        console.log(this.state)
+        this.props.addNewRace(this.state)
     }
 
     render() {
@@ -120,6 +119,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchRaceDistances: () => dispatch(fetchRaceDistances()),
+        addNewRace: raceObject => dispatch(addNewRace(raceObject))
     }
 }
 
