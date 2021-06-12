@@ -7,7 +7,8 @@ class RaceNew extends Component {
 
     state = {
         name: '',
-        race_distance: -1
+        racedistance_id: -1,
+        race_date: ''
     }
 
     componentDidMount() {
@@ -17,7 +18,11 @@ class RaceNew extends Component {
     handleOnChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        })
+        },this.quick)
+    }
+
+    quick = () => {
+        console.log(this.state)
     }
 
     render() {
@@ -31,7 +36,7 @@ class RaceNew extends Component {
                     </p>
                     <p>
                         <label>Race distance: </label><br/>
-                        <select name="race_distance" id="race_distance" value={this.state.race_distance} onChange={this.handleOnChange}>
+                        <select name="racedistance_id" id="racedistance_id" value={this.state.racedistance_id} onChange={this.handleOnChange}>
                             <option value="-1"></option>
                             <option value="0">All</option>
                             {this.props.raceDistances.map(distance => {
@@ -40,6 +45,10 @@ class RaceNew extends Component {
                                 )
                             })}
                         </select>
+                    </p>
+                    <p>
+                        <label>Race date: </label><br/>
+                        <input type="date" name="race_date" id="race_date" value={this.state.race_date} onChange={this.handleOnChange} />
                     </p>
                 </form>
             </div>
