@@ -12,8 +12,8 @@ class Races extends Component {
     render() {
         return (
             <div>
+                <RaceDistanceDropdown raceDistances={this.props.raceDistances} />
                 <p>
-                    <RaceDistanceDropdown />
                     TBD: Race info
                 </p>
             </div>
@@ -23,7 +23,7 @@ class Races extends Component {
 
 const mapStateToProps = state => {
     return {
-        race_distances: state.race_distances,
+        raceDistances: state.race_distances,
         loading: state.loading
     }
 }

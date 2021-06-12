@@ -1,6 +1,7 @@
 import React from 'react'
 
 const RaceDistanceDropdown = props => {
+    console.log(props)
     return (
         <>
             <p>Race Distance Dropdown here</p>
