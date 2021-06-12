@@ -1,4 +1,4 @@
-const racesReducer = (state = {race_distances: [], races: [], loading: false}, action) => {
+const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races: [], loading: false}, action) => {
     switch (action.type) {
         case 'LOAD_DISTANCES':
             return {

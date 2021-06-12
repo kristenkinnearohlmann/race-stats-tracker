@@ -6,6 +6,7 @@ import './RaceNew.css'
 class RaceNew extends Component {
 
     state = {
+        current_user: this.props.currentUser.id,
         name: '',
         racedistance_id: -1,
         race_date: '',
@@ -111,6 +112,7 @@ class RaceNew extends Component {
 
 const mapStateToProps = state => {
     return {
+        currentUser: state.current_user,
         raceDistances: state.race_distances,
         loading: state.loading
     }

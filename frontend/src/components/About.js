@@ -11,7 +11,7 @@ const About = () => {
             </div>
             <div className="about-content-wrapper">
                 <div>
-                    <img src="https://res.cloudinary.com/du4oldiab/image/upload/v1623506873/race-stats-tracker/lincoln-2019-cropped_s70j16.jpg" />
+                    <img alt="Woman running" src="https://res.cloudinary.com/du4oldiab/image/upload/v1623506873/race-stats-tracker/lincoln-2019-cropped_s70j16.jpg" />
                 </div>
                 <div>
                     <p>
