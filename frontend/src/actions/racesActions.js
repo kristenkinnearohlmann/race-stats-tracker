@@ -39,8 +39,13 @@ export const fetchRacesByDistance = raceSearchParms => {
             fetch(url)
             .then(response => response.json())
             .then(responseJSON => {
-                // console.log(responseJSON)
-                dispatch( {type: 'SHOW_RACES', payload: {races: responseJSON, results: true}} )
+                let races;
+                if (responseJSON.msg) {
+                    races = []
+                } else {
+                    races = responseJSON
+                }
+                dispatch( {type: 'SHOW_RACES', payload: {races: races, results: true}} )
             })
         }
     }

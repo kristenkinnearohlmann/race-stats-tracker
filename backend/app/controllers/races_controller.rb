@@ -1,7 +1,12 @@
 class RacesController < ApplicationController
 
     def index
-        byebug
+        if params[:user_id] && user = User.find(params[:user_id])
+            races = user.races
+            render json: RacesSerializer.new(races).to_serialized_json
+        else
+            render json: { msg: "User id is not valid"}
+        end
     end
 
     def create
