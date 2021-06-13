@@ -5,4 +5,8 @@ class RaceDistancesController < ApplicationController
         render json: RaceDistancesSerializer.new(race_distances).to_serialized_json
     end
 
+    def show
+        byebug
+    end
+
 end

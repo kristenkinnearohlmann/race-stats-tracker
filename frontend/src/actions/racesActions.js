@@ -19,25 +19,18 @@ export const fetchRacesByDistance = raceSearchParms => {
         dispatch( {type: 'LOAD_RACES'} )
         const { raceDistanceId, currentUserId } = raceSearchParms
         let url;
-        console.log(raceSearchParms)
-        console.log(`http://localhost:3001/users/${currentUserId}/races`)
-        console.log(`http://localhost:3001/users/${currentUserId}/race_distances/${raceDistanceId}`)
-        // // all races for a user (0)
-        // `http://localhost:3001/users/${currentUserId}/races`
-        // // races by distance for a user (1..n)
-        // `http://localhost:3001/users/${currentUserId}/race_distances/${raceDistanceId}`
-        // http://localhost:3001/users/1/race_distances/6
-        // switch (raceDistanceId) {
-        //     case "-1":
-        //         break
-        //     case "0":
-        //         // url = 'http://localhost:3001/races'
-        //         break
-        //     default:
-        //         url = 
-        //         break
-        // }
-        url = ""
+
+        switch (raceDistanceId) {
+            case "-1": // no selection made
+                break
+            case "0": // all races for the user
+                url = `http://localhost:3001/users/${currentUserId}/races`
+                break
+            default: // specific race distance races for the user
+                url = `http://localhost:3001/users/${currentUserId}/race_distances/${raceDistanceId}`
+                break
+        }
+
         console.log(url)
 
         // TODO: Need to ensure payload of distance choice goes into the dispatch as well for the backend scope
