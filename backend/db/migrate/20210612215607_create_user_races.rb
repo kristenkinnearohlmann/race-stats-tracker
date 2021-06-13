@@ -15,7 +15,8 @@ class CreateUserRaces < ActiveRecord::Migration[6.1]
       t.integer :division_finishers
       t.text :race_notes
       t.integer :age
-      t.time :pace
+      t.string :pace_miles
+      t.string :pace_kilometers
       t.float :overall_rank
       t.float :gender_rank
       t.float :division_rank
