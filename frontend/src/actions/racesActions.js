@@ -14,20 +14,19 @@ export const fetchRaceDistances = () => {
 // action to receive onChange from RaceDistanceDropdown, 
 // formulate proper URL based on 0 (all) or specific race distance id,
 // populate state, and load a race list component
-export const fetchRacesByDistance = raceDistanceId => {
+export const fetchRacesByDistance = (raceDistanceId, currentUserId) => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
         let url;
 
-        console.log(`Race distance id ${raceDistanceId}`)
         switch (raceDistanceId) {
             case "-1":
                 break
             case "0":
-                url = 'http://localhost:3001/races'
+                // url = 'http://localhost:3001/races'
                 break
             default:
-                url = 'http://localhost:3001/user/:id/races'
+                url = `http://localhost:3001/user/${currentUserId}/races`
                 break
         }
         console.log(url)
