@@ -8,6 +8,7 @@
 
 # # Add user
 user = User.create(email: "focusrunning.kko@gmail.com", password: "abc123", date_of_birth: "1976-01-06", bio: "A runner from Bloomington, MN")
+user2 = User.create(email: "kkinnea@gmail.com", password: "xyz789", date_of_birth: "1986-01-06", bio: "A runner from Bloomington, IL")
 
 # # Populate race_distances
 RaceDistance.create(distance_type: "1 Mile", miles: 1.0, kilometers: 1.61)

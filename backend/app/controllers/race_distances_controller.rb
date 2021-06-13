@@ -6,15 +6,13 @@ class RaceDistancesController < ApplicationController
     end
 
     def show
-        byebug
-        
-        # params[:user_id]
-        # user = User.find(params[:user_id])
-        # params[:id]
-        # ?
-        # # user.races.distance(params[:id])
-        # or
-        # user.races.find_by(race_distance_id: params[:id])
+        if params[:user_id] && user = User.find(params[:user_id])
+            byebug
+            race_distance = user.races.distance(params[:id])
+            render json: RaceDistancesSerializer.new(race_distance).to_serialized_json
+        else
+            render json: { msg: "User id is not valid"}
+        end
     end
 
 end
