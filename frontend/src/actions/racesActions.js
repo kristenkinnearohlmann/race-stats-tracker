@@ -10,10 +10,6 @@ export const fetchRaceDistances = () => {
     }
 }
 
-// TODO: Finish pull and load of races for a user
-// action to receive onChange from RaceDistanceDropdown, 
-// formulate proper URL based on 0 (all) or specific race distance id,
-// populate state, and load a race list component
 export const fetchRacesByDistance = raceSearchParms => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
@@ -32,8 +28,6 @@ export const fetchRacesByDistance = raceSearchParms => {
                 url = `http://localhost:3001/users/${currentUserId}/race_distances/${raceDistanceId}`
                 break
         }
-
-        console.log(url)
 
         if (url) {
             fetch(url)
