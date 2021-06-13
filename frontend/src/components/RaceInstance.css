@@ -1,8 +1,8 @@
 .race-instance-wrapper {
-    background-color: blueviolet;
     border-top: 1px solid #fff;
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -15,6 +15,10 @@
     margin-left: 10px;
     padding: 5px;
     width: 45%;
+}
+
+.race-instance-subdetail {
+    font-size: 0.75rem;
 }
 
 @media screen and (max-width: 768px) {

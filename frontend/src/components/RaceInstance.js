@@ -10,11 +10,17 @@ const RaceInstance = ({ name, url, race }) => {
     return (
         <div className="race-instance-wrapper">
             <div>
-                {name}<br/>
-                <a href={url} target="blank">{url}</a><br/>
-                {race_date_date.toLocaleDateString('en-US',options)}
+                <span>
+                    {name}<br/>
+                    <span className="race-instance-subdetail">
+                        {race_date_date.toLocaleDateString('en-US',options)}
+                        {url ? " | " : ""}
+                        {url ? <a href={url} target="blank">Race website</a> : ""}
+                    </span>
+                </span>
             </div>
             <div>
+                Time, pace, overall
                 {race.elapsed_time}
             </div>
         </div>
