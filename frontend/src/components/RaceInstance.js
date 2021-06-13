@@ -1,6 +1,7 @@
 import React from 'react'
 
-const RaceInstance = props => {
+const RaceInstance = ({ user_races }) => {
+    console.log(user_races)
     return (
         <>
             <p>
