@@ -8,10 +8,11 @@ class RaceDistancesController < ApplicationController
     def show
         if params[:user_id] && user = User.find(params[:user_id])
             race_distance = user.races.distance(params[:id])
-            if race_distance
+            
+            if race_distance.any?
                 render json: RaceDistancesSerializer.new(race_distance).to_serialized_json
             else
-                render json: { msg: 'No results returned for this user and distance' }
+                render json: { msg: 'No results returned for this user and distance.' }
             end
         else
             render json: { msg: "User id is not valid"}
