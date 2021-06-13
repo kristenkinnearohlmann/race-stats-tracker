@@ -1,11 +1,16 @@
 import React from 'react'
 
-const RaceInstance = ({ user_races }) => {
-    console.log(user_races)
+const RaceInstance = ({ name, url, race }) => {
+    console.log(race)
     return (
         <>
             <p>
-                Race instances here
+                {name}<br/>
+                <a href={url} target="blank">{url}</a>
+            </p>
+            <p>
+                {race.race_date}<br/>
+                {race.elapsed_time}
             </p>
         </>
     )
