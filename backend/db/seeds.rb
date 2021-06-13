@@ -22,7 +22,7 @@ marathon = RaceDistance.create(distance_type: "Marathon", miles: 26.2, kilometer
 race1 = Race.create(name: "Charleston Marathon", url: "https://capstoneraces.com/charleston-marathon/", race_distance_id: 6)
 race2 = Race.create(name: "Securian Winter Run", url: "https://www.wintercarnival.com/events/securian-winter-run/",race_distance_id: 3)
 race3 = Race.create(name: "TC 1 Mile", url: "", race_distance_id: 1)
-race4 = Race.create(name: "Birdtown Half Marathon", url: "", race_distance_id: 5)
+race4 = Race.create(name: "Birdtown Half Marathon", url: "http://www.thebirdtown.com/", race_distance_id: 5)
 
 # # Add user race instances
 user1.user_races.create(race_date: "2020-01-11", elapsed_time: "05:10:16", gun_time: "05:11:10", results_url: "https://racesonline.com/events/charleston-marathon/results/2020/bib/5507", bib_nbr: "5507", division_name: "40-44", overall_place: 647, overall_finishers: 861, gender_place: 218, gender_finishers: 336, division_place: 28, division_finishers: 45, race_notes: "Wow, humidity! I ran too hard the first 8 miles and had to ratchet back hard. It was the first marathon where I was worried I wouldn't finish in time but I had plenty of time once I decided on a great strategy to manage. I hope none of the remaining southern marathons are so high humidity.", race_id: race1.id)

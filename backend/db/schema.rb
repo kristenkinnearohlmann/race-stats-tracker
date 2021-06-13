@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_215607) do
     t.date "race_date"
     t.string "elapsed_time"
     t.string "gun_time"
-    t.string "results_url"
+    t.text "results_url"
     t.string "bib_nbr"
     t.string "division_name"
     t.integer "overall_place"
