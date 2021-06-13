@@ -4,6 +4,8 @@ const RaceList = ({ races }) => {
     // TODO: add logic to return boilerplate on first load
     // or when dropdown changes to empty
     // OR the selected race list
+    console.log('Race list')
+    console.log(races)
     if (races.length === 0) {
         return <p>Select a race distance from the list to see your races.</p>
     } else {

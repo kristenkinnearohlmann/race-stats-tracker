@@ -22,6 +22,8 @@ export const fetchRacesByDistance = raceSearchParms => {
 
         switch (raceDistanceId) {
             case "-1": // no selection made
+                console.log("On or returned to no selection")
+                dispatch( {type: 'SHOW_RACES', races: []} )
                 break
             case "0": // all races for the user
                 url = `http://localhost:3001/users/${currentUserId}/races`
@@ -33,12 +35,14 @@ export const fetchRacesByDistance = raceSearchParms => {
 
         console.log(url)
 
-        fetch(url)
+        if (url) {
+            fetch(url)
             .then(response => response.json())
             .then(responseJSON => {
-                console.log(responseJSON)
+                // console.log(responseJSON)
                 dispatch( {type: 'SHOW_RACES', races: responseJSON} )
             })
+        }
     }
 }
 

@@ -12,6 +12,8 @@ class Races extends Component {
     }
     
     render() {
+        console.log('Races component')
+        console.log(this.props.races)
         return (
             <div className="races-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
