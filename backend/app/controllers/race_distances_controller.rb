@@ -7,7 +7,7 @@ class RaceDistancesController < ApplicationController
 
     def show
         if params[:user_id] && user = User.find(params[:user_id])
-            race_distance = user.races.distance(params[:id]).sort_reverse_chron
+            race_distance = user.races.distance(params[:id]).distinct
             
             if race_distance.any?
                 render json: RaceDistancesSerializer.new(race_distance).to_serialized_json

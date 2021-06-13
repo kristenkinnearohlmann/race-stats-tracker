@@ -28,10 +28,13 @@ export const fetchRacesByDistance = raceSearchParms => {
                 break
         }
 
+        console.log(url)
+
         if (url) {
             fetch(url)
             .then(response => response.json())
             .then(responseJSON => {
+                console.log(responseJSON)
                 let races;
                 if (responseJSON.msg) {
                     races = []
