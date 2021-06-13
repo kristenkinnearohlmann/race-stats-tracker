@@ -2,7 +2,7 @@ class RacesController < ApplicationController
 
     def index
         if params[:user_id] && user = User.find(params[:user_id])
-            races = user.races.sort_reverse_chron
+            races = user.races.distinct
             render json: RacesSerializer.new(races).to_serialized_json
         elsif !params[:user_id]
             races = Race.all
