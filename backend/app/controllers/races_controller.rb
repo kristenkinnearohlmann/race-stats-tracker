@@ -8,9 +8,10 @@ class RacesController < ApplicationController
                 r.race_distance_id = params[:race][:race_distance_id]
             end
             params[:user_race][:race_id] = race.id
-            byebug
-            user.user_races.create(race_params(params[:user_race]))
-            byebug
+            if user.user_races.create(race_params(params[:user_race]))
+                render json: { msg: 'Success', redirect: '/races' }
+            end
+
         end
 
     end
