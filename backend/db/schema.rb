@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_06_12_215607) do
 
   create_table "user_races", force: :cascade do |t|
     t.date "race_date"
-    t.time "elapsed_time"
-    t.time "gun_time"
+    t.string "elapsed_time"
+    t.string "gun_time"
     t.string "results_url"
     t.string "bib_nbr"
     t.string "division_name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_215607) do
     t.string "email"
     t.string "password_digest"
     t.date "date_of_birth"
+    t.string "gender"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

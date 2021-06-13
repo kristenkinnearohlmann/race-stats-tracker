@@ -2,8 +2,8 @@ class CreateUserRaces < ActiveRecord::Migration[6.1]
   def change
     create_table :user_races do |t|
       t.date :race_date
-      t.time :elapsed_time
-      t.time :gun_time
+      t.string :elapsed_time
+      t.string :gun_time
       t.string :results_url
       t.string :bib_nbr
       t.string :division_name
