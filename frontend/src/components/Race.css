@@ -1,0 +1,15 @@
+.race-wrapper {
+    background-color: blueviolet;
+    border-top: 1px solid #fff;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.race-wrapper > div:first-child {
+    width: 25vw;
+}
+
+.race-wrapper > div:last-child {
+    margin-left: 10px;
+}

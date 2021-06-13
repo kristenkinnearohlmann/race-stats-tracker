@@ -12,9 +12,12 @@ const RaceList = ({ races, results }) => {
             <div className="race-list-wrapper">
                 {races.map(race => {
                     return (
-                        <Race key={race.id} race={race} />
+                        <Race race={race} />
                     )
                 })}
+                {/* return (
+                    <Race race={race} />
+                ) */}
             </div>
         )
     }
