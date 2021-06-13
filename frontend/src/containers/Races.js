@@ -12,12 +12,10 @@ class Races extends Component {
     }
     
     render() {
-        console.log('Races component')
-        console.log(this.props.races)
         return (
             <div className="races-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
-                <RaceList races={this.props.races} />
+                <RaceList races={this.props.races} results={this.props.results} />
             </div>
         )
     }
@@ -28,7 +26,8 @@ const mapStateToProps = state => {
         raceDistances: state.race_distances,
         loading: state.loading,
         races: state.races,
-        currentUserId: state.current_user.id
+        currentUserId: state.current_user.id,
+        results: state.results
     }
 }
 
