@@ -1,15 +1,28 @@
 import React from 'react'
 
-const RaceList = props => {
-    // console.log(props)
+const RaceList = ({ races }) => {
+    console.log(races)
+    console.log(races.length)
     // TODO: add logic to return boilerplate on first load
     // or when dropdown changes to empty
     // OR the selected race list
-    return (
-        <>
-            <p>Race list here</p>
-        </>
-    )
+    if (races.length === 0) {
+        return <p>Select a race distance from the list to see your races.</p>
+    } else {
+        return (
+            <>
+                <p>
+                    <ul>
+                        {races.map(race => {
+                            return (
+                                <li>{race.name}</li>
+                            )
+                        })}
+                    </ul>
+                </p>
+            </>
+        )
+    }
 }
 
 export default RaceList

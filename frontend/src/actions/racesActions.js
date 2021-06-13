@@ -59,7 +59,6 @@ export const addNewRace = raceObject => {
         })
             .then(response => response.json())
             .then(responseJSON => {
-                console.log(responseJSON)
                 window.location.href = responseJSON.redirect
             })
     }
