@@ -33,7 +33,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchRaceDistances: () => dispatch(fetchRaceDistances()),
-        fetchRacesByDistance: (raceDistanceId, currentUserId) => dispatch(fetchRacesByDistance(raceDistanceId, currentUserId))
+        fetchRacesByDistance: raceSearchParms => dispatch(fetchRacesByDistance(raceSearchParms))
     }
 }
 

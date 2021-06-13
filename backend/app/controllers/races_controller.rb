@@ -1,5 +1,9 @@
 class RacesController < ApplicationController
 
+    def index
+        byebug
+    end
+
     def create
         user = User.find(params[:current_user_id])
 

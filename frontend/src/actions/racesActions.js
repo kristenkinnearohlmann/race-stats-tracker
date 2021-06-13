@@ -14,28 +14,30 @@ export const fetchRaceDistances = () => {
 // action to receive onChange from RaceDistanceDropdown, 
 // formulate proper URL based on 0 (all) or specific race distance id,
 // populate state, and load a race list component
-export const fetchRacesByDistance = (raceDistanceId, currentUserId) => {
+export const fetchRacesByDistance = raceSearchParms => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
         let url;
-
-        switch (raceDistanceId) {
-            case "-1":
-                break
-            case "0":
-                // url = 'http://localhost:3001/races'
-                break
-            default:
-                url = `http://localhost:3001/user/${currentUserId}/races`
-                break
-        }
+        console.log(raceSearchParms)
+        // switch (raceDistanceId) {
+        //     case "-1":
+        //         break
+        //     case "0":
+        //         // url = 'http://localhost:3001/races'
+        //         break
+        //     default:
+        //         url = `http://localhost:3001/users/${currentUserId}/races`
+        //         break
+        // }
+        url = ""
         console.log(url)
 
         // TODO: Need to ensure payload of distance choice goes into the dispatch as well for the backend scope
         // fetch(url)
         //     .then(response => response.json())
         //     .then(responseJSON => {
-        //         dispatch( {type: 'SHOW_RACES', races: responseJSON} )
+        //         console.log(responseJSON)
+        //         // dispatch( {type: 'SHOW_RACES', races: responseJSON} )
         //     })
     }
 }
