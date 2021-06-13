@@ -17,17 +17,22 @@ export const fetchRaceDistances = () => {
 export const fetchRacesByDistance = raceDistanceId => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
-        console.log(raceDistanceId)
         let url;
 
-        // if (raceDistanceId === 0) {
-        //     url = ""
-        //     // url: 'http://localhost:3001/races'
-        // } else {
-        //     url = ""
-        //     // url: ''http://localhost:3001/race_distances/:id/races'
-        // }
+        console.log(`Race distance id ${raceDistanceId}`)
+        switch (raceDistanceId) {
+            case "-1":
+                break
+            case "0":
+                url = 'http://localhost:3001/races'
+                break
+            default:
+                url = 'http://localhost:3001/user/:id/races'
+                break
+        }
+        console.log(url)
 
+        // TODO: Need to ensure payload of distance choice goes into the dispatch as well for the backend scope
         // fetch(url)
         //     .then(response => response.json())
         //     .then(responseJSON => {

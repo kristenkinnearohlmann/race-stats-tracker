@@ -1,8 +1,6 @@
 import React from 'react'
 
 const RaceList = ({ races }) => {
-    console.log(races)
-    console.log(races.length)
     // TODO: add logic to return boilerplate on first load
     // or when dropdown changes to empty
     // OR the selected race list
