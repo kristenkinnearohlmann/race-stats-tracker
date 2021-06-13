@@ -10,14 +10,12 @@ const RaceList = ({ races, results }) => {
     } else {
         return (
             <div className="race-list-wrapper">
-                {races.map(race => {
+                {races.map((race, index) => {
+                    const uniqRace = `${race.id}-${index}`
                     return (
-                        <Race race={race} />
+                        <Race key={uniqRace} race={race} />
                     )
                 })}
-                {/* return (
-                    <Race race={race} />
-                ) */}
             </div>
         )
     }

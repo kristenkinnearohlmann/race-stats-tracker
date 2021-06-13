@@ -1,4 +1,5 @@
 import React from 'react'
+import './RaceInstance.css'
 
 const RaceInstance = ({ name, url, race }) => {
     // console.log(race)
@@ -7,17 +8,16 @@ const RaceInstance = ({ name, url, race }) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
     return (
-        <>
-            <p>
+        <div className="race-instance-wrapper">
+            <div>
                 {name}<br/>
-                <a href={url} target="blank">{url}</a>
-            </p>
-            <p>
+                <a href={url} target="blank">{url}</a><br/>
                 {race_date_date.toLocaleDateString('en-US',options)}
-                <br/>
+            </div>
+            <div>
                 {race.elapsed_time}
-            </p>
-        </>
+            </div>
+        </div>
     )
 }
 
