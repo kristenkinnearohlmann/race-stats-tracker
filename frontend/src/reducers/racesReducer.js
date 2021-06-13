@@ -1,4 +1,4 @@
-const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races: [], results: false, loading: false}, action) => {
+const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races: [], distance_choice: -1, results: false, loading: false}, action) => {
     switch (action.type) {
         case 'LOAD_DISTANCES':
             return {
@@ -23,11 +23,12 @@ const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races:
             }
 
         case 'SHOW_RACES':
-            const { races, results } = action.payload
+            const { races, distance_choice, results } = action.payload
 
             return {
                 ...state,
                 races: [...races],
+                distance_choice: distance_choice,
                 loading: false,
                 results: results
             }
@@ -37,7 +38,8 @@ const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races:
                 ...state,
                 races: [],
                 loading: false,
-                results: false
+                results: false,
+                distance_choice: -1
             }
 
         default:

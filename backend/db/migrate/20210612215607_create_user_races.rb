@@ -4,7 +4,7 @@ class CreateUserRaces < ActiveRecord::Migration[6.1]
       t.date :race_date
       t.string :elapsed_time
       t.string :gun_time
-      t.string :results_url
+      t.text :results_url
       t.string :bib_nbr
       t.string :division_name
       t.integer :overall_place
