@@ -7,7 +7,6 @@ class RaceDistancesController < ApplicationController
 
     def show
         if params[:user_id] && user = User.find(params[:user_id])
-            byebug
             race_distance = user.races.distance(params[:id])
             render json: RaceDistancesSerializer.new(race_distance).to_serialized_json
         else

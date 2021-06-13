@@ -5,9 +5,6 @@ class RaceDistancesSerializer
     end
 
     def to_serialized_json
-        # options = {
-        #     except: [:updated_at, :created_at]
-        # }
         options = {
             include: {
                 user_races: {
