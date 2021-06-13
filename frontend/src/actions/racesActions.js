@@ -39,14 +39,20 @@ export const fetchRacesByDistance = raceDistanceId => {
 export const addNewRace = raceObject => {
     return (dispatch) => {
         console.log("addNewRace invoked")
-        const {current_user_id, ...race} = {...raceObject}
+        const {current_user_id, name, race_distance_id, ...user_race} = {...raceObject}
+        const race = {
+            "name": name,
+            "race_distance_id": race_distance_id
+        }
         console.log({
             "current_user_id": current_user_id,
-            "race": race
+            "race": race,
+            "user_race": user_race
         })
         const racePostObj = {
             "current_user_id": current_user_id,
-            "race": race
+            "race": race,
+            "user_race": user_race
         }
 
         fetch('http://localhost:3001/races', {
