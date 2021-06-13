@@ -2,6 +2,8 @@ class UserRace < ApplicationRecord
   belongs_to :user
   belongs_to :race
 
+  scope :sort_reverse_chron, -> { order(race_date: :asc) } # FUTURE: counter-intuitive? I needed to sort the dates asc to have them be in reverse chron
+
   before_save :calculate_race_age
   before_save :calculate_pace_miles
   before_save :calculate_pace_kilometers

@@ -2,7 +2,8 @@ class RacesController < ApplicationController
 
     def index
         if params[:user_id] && user = User.find(params[:user_id])
-            races = user.races.sort_reverse_chron
+            # races = user.races.sort_reverse_chron
+            races = user.user_races.sort_reverse_chron
             render json: RacesSerializer.new(races).to_serialized_json
         else
             render json: { msg: "User id is not valid"}
