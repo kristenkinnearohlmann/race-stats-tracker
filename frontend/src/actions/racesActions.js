@@ -33,12 +33,11 @@ export const fetchRacesByDistance = raceSearchParms => {
 
         console.log(url)
 
-        // TODO: Need to ensure payload of distance choice goes into the dispatch as well for the backend scope
         fetch(url)
             .then(response => response.json())
             .then(responseJSON => {
                 console.log(responseJSON)
-                // dispatch( {type: 'SHOW_RACES', races: responseJSON} )
+                dispatch( {type: 'SHOW_RACES', races: responseJSON} )
             })
     }
 }
