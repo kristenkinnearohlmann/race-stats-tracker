@@ -18,7 +18,6 @@ export const fetchRacesByDistance = raceSearchParms => {
 
         switch (raceDistanceId) {
             case "-1": // no selection made
-                console.log("On or returned to no selection")
                 dispatch( {type: 'SHOW_RACES', payload: {races: [], results: false}} )
                 break
             case "0": // all races for the user
@@ -70,5 +69,11 @@ export const addNewRace = raceObject => {
             .then(responseJSON => {
                 window.location.href = responseJSON.redirect
             })
+    }
+}
+
+export const clearRaces = () => {
+    return (dispatch) => {
+        dispatch( {type: 'RESET_RACES'} )
     }
 }

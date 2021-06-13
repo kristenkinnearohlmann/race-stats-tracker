@@ -1,6 +1,7 @@
 import React from 'react'
 
 const RaceList = ({ races, results }) => {
+
     if (races.length === 0 && results === false) {
         return <p>Select a race distance from the list to see your races.</p>
     } else if (races.length === 0 && results === true) {

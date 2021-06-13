@@ -32,6 +32,14 @@ const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races:
                 results: results
             }
 
+        case 'RESET_RACES':
+            return {
+                ...state,
+                races: [],
+                loading: false,
+                results: false
+            }
+
         default:
             return state
     }
