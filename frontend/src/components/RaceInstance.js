@@ -20,8 +20,25 @@ const RaceInstance = ({ name, url, race }) => {
                 </span>
             </div>
             <div>
-                Time, pace, overall
-                {race.elapsed_time}
+                <div>
+                    <p>
+                        Time<br/>
+                        <span className="race-instance-main-detail">{race.elapsed_time}</span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Pace<br/>
+                        <span className="race-instance-main-detail">{race.pace_miles}</span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Overall<br/>
+                        <span className="race-instance-main-detail">{race.overall_place}<br/>
+                        <span className="race-instance-subdetail">of {race.overall_finishers}</span></span>
+                    </p>
+                </div>
             </div>
         </div>
     )
