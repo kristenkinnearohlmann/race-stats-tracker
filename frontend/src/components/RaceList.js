@@ -1,4 +1,5 @@
 import React from 'react'
+import Race from './Race'
 
 const RaceList = ({ races, results }) => {
     console.log(races)
@@ -10,13 +11,11 @@ const RaceList = ({ races, results }) => {
         return (
             // TODO: Add Race component to render races
             <>
-                <ul>
-                    {races.map(race => {
-                        return (
-                            <li key={race.id}>{race.name}</li>
-                        )
-                    })}
-                </ul>
+                {races.map(race => {
+                    return (
+                        <Race race={race} />
+                    )
+                })}
             </>
         )
     }
