@@ -1,18 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './RaceInstance.css'
 
 const RaceInstance = ({ match, uniqueId, name, url, race }) => {
-
     const race_date_date = new Date(race.race_date)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
     // console.log(match)
     console.log(uniqueId)
+    console.log(race.id)
     return (
         <div className="race-instance-wrapper">
             <div>
                 <span>
-                    <a href={uniqueId}>{name}</a><br/>
+                    {/* <a href={uniqueId}>{name}</a><br/> */}
+                    <Link key={uniqueId} to={`/races/${race.id}`}>{name}</Link><br/>
                     <span className="race-instance-subdetail">
                         {race_date_date.toLocaleDateString('en-US',options)}
                         {url ? " | " : ""}

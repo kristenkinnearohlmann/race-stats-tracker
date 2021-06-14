@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import Race from './Race'
 import './RaceList.css'
 
-const RaceList = ({ match, races, results }) => {
+const RaceList = ({ races, results }) => {
 
     if (races.length === 0 && results === false) {
         return <p>Select a race distance from the list to see your races.</p>
@@ -43,6 +43,7 @@ const RaceList = ({ match, races, results }) => {
         // )
 
         // lastchange - trial 2
+
         const generateRaces = races.map((race, index) => {
             const uniqRace = `${race.id}-${index}` 
             return (
