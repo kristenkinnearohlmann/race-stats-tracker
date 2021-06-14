@@ -6,6 +6,19 @@ const RaceInstanceDetail = ({ match, races }) => {
     const race_date_date = new Date(selectedRace.race_date)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
+    // TODO: Lay out remaining detail data
+
+    // elapsed_time/gun_time
+    // pace_miles/pace_kilometers
+    // bib_nbr
+    // age
+    // division_name
+    // overall_place/overall_finishers/overall_rank
+    // gender_place/gender_finishers/gender_rank
+    // division_place/division_finishers/division_rank
+    // race_notes
+
+
     return (
         <div>
             <div>
