@@ -1,18 +1,20 @@
 import React from 'react'
 
-const RaceInstanceDetail = ({ match, uniqueId, name, url, race }) => {
-    const race_date_date = new Date(race.race_date)
+const RaceInstanceDetail = ({ match, races }) => {
+    const urlSegments = match.url.split("/")
+    const selectedRace = races.find(race => race.raceLocatorId === urlSegments[urlSegments.length - 1])
+    const race_date_date = new Date(selectedRace.race_date)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
     return (
         <div>
             <div>
             <span>
-                    {name}<br/>
+                    {selectedRace.name}<br/>
                     <span className="race-instance-subdetail">
                         {race_date_date.toLocaleDateString('en-US',options)}
-                        {url ? " | " : ""}
-                        {url ? <a href={url} target="blank">Race website</a> : ""}
+                        {selectedRace.url ? " | " : ""}
+                        {selectedRace.url ? <a href={selectedRace.url} target="blank">Race website</a> : ""}
                     </span>
                 </span>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './RaceInstance.css'
 
 const RaceInstance = ({ race }) => {
@@ -10,7 +10,7 @@ const RaceInstance = ({ race }) => {
         <div className="race-instance-wrapper">
             <div>
                 <span>
-                    <Link key={race.uniqueId} to={`/races/${race.uniqueId}`}>{race.name}</Link><br/>
+                    <Link key={race.raceLocatorId} to={`/races/${race.raceLocatorId}`}>{race.name}</Link><br/>
                     <span className="race-instance-subdetail">
                         {race_date_date.toLocaleDateString('en-US',options)}
                         {race.url ? " | " : ""}
