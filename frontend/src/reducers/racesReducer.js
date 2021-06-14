@@ -15,17 +15,14 @@ const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races:
             }
 
         case 'LOAD_RACES':
-            console.log('LOAD RACES')
             return {
                 ...state,
-                // races: [...state.races],
                 races: [],
                 loading: true,
                 results: false
             }
 
         case 'SHOW_RACES':
-            console.log('SHOW RACES')
             const { races, distance_choice, results } = action.payload
 
             return {

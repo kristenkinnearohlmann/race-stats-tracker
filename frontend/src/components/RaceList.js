@@ -2,6 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import Race from './Race'
 import Carnitas from './Carnitas'
+import RaceCarnitas from './RaceCarnitas'
 import './RaceList.css'
 
 const RaceList = ({ match, races, results }) => {
@@ -10,68 +11,55 @@ const RaceList = ({ match, races, results }) => {
     // console.log(match)
     // console.log(races)
 
-    // const userRace = race.user_races.map((ur, index) => {
-    //     return {
-    //         ...ur,
-    //         name: race.name,
-    //         url: race.url,
-    //         uniqueId: `race-${index}${race.id}${ur.id}`
-    //     }
-    // })
-
-    // console.log(userRace)
-    // let allRaces = [];
-    // if (races.length > 1) {
-    //     allRaces = races.map((race, index) => {
-    //         if (race.user_races.length > 1) {
-    //             race.user_races.map(ur => {
-    //                 return {
-    //                     ...ur,
-    //                     name: race.name,
-    //                     url: race.url,
-    //                     uniqueID: `race-${index}${race.id}${race.user_race.id}`
-    //                 }
-    //             })
-    //         } else {
-    //             return {
-    //                 ...race.user_race,
+    // console.log('CHANGE SELECT')
+    // if (races.length >= 1) {
+    //     races.forEach(race => {
+    //         race.user_races.forEach((ur, index) => {
+    //             console.log({
     //                 name: race.name,
     //                 url: race.url,
-    //                 uniqueID: `race-${index}${race.id}${race.user_race.id}`
-    //             }
-    //         }
+    //                 uniqueID: `race-${index}${race.id}${ur.id}`,
+    //                 ...ur
+    //             })
+    //         })
     //     })
     // }
 
-    // console.log(allRaces)
-
+    const racesWithUnqiueID = [];
     if (races.length >= 1) {
-        races.forEach(race => {
-            race.user_races.forEach((ur, index) => {
-                console.log(ur)
-                console.log(ur.id)
-                console.log(race.id)
-                console.log(index)
+        races.map(race => {
+            race.user_races.map((ur, index) => {
+                racesWithUnqiueID.push({
+                    name: race.name,
+                    url: race.url,
+                    raceLocatorId: `race-${index}${race.id}${ur.id}`,
+                    ...ur
+                })
             })
-        //     race.user_races.forEach((ur, index) => {
-        //         const uniqueID = `race-${index}${race.id}${ur.user_race.id}`
-        //         console.log(uniqueID)
-        //     })
         })
     }
 
+    console.log(racesWithUnqiueID)
+
+    //race-022
 
     const renderFajitas = (
         <p>Fajitas</p>
     )
 
+    const renderRace = match.url
+
+
     return (
         <div>
             <Route exact path={match.url} render={() => <p>Figuring</p>} />
+
+            <Route path={match.url + '/:id'} render={routerProps => <RaceCarnitas {...routerProps} races={racesWithUnqiueID} />} />
             
             <Route path={match.url + '/carnitas'} component={Carnitas} />
 
             <Route path={match.url + '/fajitas'} render={() => renderFajitas} />
+
         </div>
     )
     // if (races.length === 0 && results === false) {
