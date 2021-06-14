@@ -23,7 +23,7 @@ const RaceList = ({ match, races, results }) => {
     const renderMain = () => {
         if (racesWithUnqiueID.length === 0)
         {
-            return results ? <p>No results found for this distance.</p> : <p>Select a race distance from the list to see your races.</p>
+            return results ? <p className="main-msg">No results found for this distance.</p> : <p className="main-msg">Select a race distance from the list to see your races.</p>
         } else {
             return <Race races={racesWithUnqiueID} />
         }

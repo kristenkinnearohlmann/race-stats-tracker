@@ -21,8 +21,13 @@ const About = () => {
                         Race Stats Tracker is a migration of that work to a more interative tool.
                     </p>
                     <p>
-                        To contact Kristen about run coaching: <a href="mailto:focusrunning.kko@gmail.com">focusrunning.kko@gmail.com</a><br/>
+                        To contact Kristen about run coaching: <a href="mailto:focusrunning.kko@gmail.com">focusrunning.kko@gmail.com</a>
+                    </p>
+                    <p>
                         To contact Kristen about development work: <a href="mailto:kristenkinnearohlmann@gmail.com">kristenkinnearohlmann@gmail.com</a> | <a href="https://github.com/kristenkinnearohlmann">GitHub</a>
+                    </p>
+                    <p>
+                        Project code and contribution guide is located on GitHub: <a href="https://github.com/kristenkinnearohlmann/race-stats-tracker">race-stats-tracker</a>
                     </p>
                 </div>
             </div>
