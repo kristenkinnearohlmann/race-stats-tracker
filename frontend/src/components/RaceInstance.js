@@ -1,17 +1,18 @@
 import React from 'react'
 import './RaceInstance.css'
 
-const RaceInstance = ({ name, url, race }) => {
-    // console.log(race)
+const RaceInstance = ({ match, uniqueId, name, url, race }) => {
 
     const race_date_date = new Date(race.race_date)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
+    // console.log(match)
+    console.log(uniqueId)
     return (
         <div className="race-instance-wrapper">
             <div>
                 <span>
-                    {name}<br/>
+                    <a href={uniqueId}>{name}</a><br/>
                     <span className="race-instance-subdetail">
                         {race_date_date.toLocaleDateString('en-US',options)}
                         {url ? " | " : ""}

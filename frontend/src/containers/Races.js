@@ -1,5 +1,6 @@
 import { React, Component } from 'react'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 import { fetchRaceDistances, fetchRacesByDistance, clearRaces } from '../actions/racesActions'
 import RaceDistanceDropdown from '../components/RaceDistanceDropdown'
 import RaceList from '../components/RaceList'
@@ -19,7 +20,9 @@ class Races extends Component {
         return (
             <div className="races-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} distanceChoice={this.props.distanceChoice} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
-                <RaceList races={this.props.races} results={this.props.results} />
+                {/* <RaceList races={this.props.races} results={this.props.results} /> */}
+                {/* lastchange */}
+                <Route path="/races" render={routerProps => <RaceList {...routerProps} races={this.props.races} results={this.props.results} />} />
             </div>
         )
     }

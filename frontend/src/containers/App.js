@@ -15,7 +15,9 @@ function App() {
         </header>
         <main className="app-main">
           <Route exact path="/races/new" component={RaceNew} />
-          <Route exact path="/races" component={Races} />
+          {/* <Route exact path="/races" component={Races} /> */}
+          {/* lastchange */}
+          <Route path="/races" render={routerProps => <Races {...routerProps} />} />
           <Route exact path="/about" component={About} />
           <Route exact path="/" component={Home} />
         </main>
