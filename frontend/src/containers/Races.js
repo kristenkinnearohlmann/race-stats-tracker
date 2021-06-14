@@ -20,8 +20,6 @@ class Races extends Component {
         return (
             <div className="races-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} distanceChoice={this.props.distanceChoice} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
-                {/* <RaceList races={this.props.races} results={this.props.results} /> */}
-                {/* lastchange */}
                 <Route path="/races" render={routerProps => <RaceList {...routerProps} races={this.props.races} results={this.props.results} />} />
             </div>
         )
