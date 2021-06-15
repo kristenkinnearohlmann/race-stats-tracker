@@ -62,7 +62,7 @@ class UserRace < ApplicationRecord
     race_pace_minutes = race_pace_raw.floor
     race_pace_seconds = (pace_in_seconds - (race_pace_minutes * 60)).floor
 
-    return "#{race_pace_minutes.to_s}:#{race_pace_seconds.to_s}"
+    return "#{race_pace_minutes.to_s}:#{"%02d" % race_pace_seconds}"
 
   end
 
