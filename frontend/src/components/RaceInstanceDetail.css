@@ -1,0 +1,13 @@
+h3 {
+    border-bottom: 2px solid #fff;
+}
+
+.section-container {
+    background-color: yellowgreen;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#race-notes {
+    font-size: 0.90rem;
+}
