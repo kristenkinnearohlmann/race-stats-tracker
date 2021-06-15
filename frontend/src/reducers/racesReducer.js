@@ -24,7 +24,7 @@ const racesReducer = (state = {current_user: {id: 1}, race_distances: [], races:
 
         case 'SHOW_RACES':
             const { races, distance_choice, results } = action.payload
-
+            console.log(distance_choice)
             return {
                 ...state,
                 races: [...races],
