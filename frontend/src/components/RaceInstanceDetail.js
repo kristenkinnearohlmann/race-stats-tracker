@@ -6,6 +6,7 @@ const RaceInstanceDetail = ({ match, races }) => {
     const selectedRace = races.find(race => race.raceLocatorId === urlSegments[urlSegments.length - 1])
     const race_date_date = new Date(selectedRace.race_date)
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const rankPercent = rawValue => (rawValue * 100.00).toFixed(2)
 
     return (
         <div>
@@ -20,15 +21,17 @@ const RaceInstanceDetail = ({ match, races }) => {
             </div>
             <div>
                 <h3 className="section-title">Race</h3>
-                <div className="section-container"> {/* flex */}
+                <div className="section-container">
                     <div> 
-                        elapsed_time/gun_time
+                        <span className="section-subtitle">Time</span>
+                        <span className="section-super">{selectedRace.elapsed_time}</span><br/>
+                        <span className="section-subdetail">Gun time: {selectedRace.gun_time}</span>
                     </div>
                     <div>
-                        pace_miles/pace_kilometers
+                        <span className="section-subtitle">Pace min/mi</span>
+                        <span className="section-super">{selectedRace.pace_miles}</span><br/>
+                        <span className="section-subdetail">Pace min/km: {selectedRace.pace_kilometers}</span>
                     </div>
-                </div>
-                <div className="section-container"> {/* flex */}
                     <div>
                         <span className="section-subtitle">Bib Number</span>
                         <span className="section-super">{selectedRace.bib_nbr}</span>
@@ -45,21 +48,21 @@ const RaceInstanceDetail = ({ match, races }) => {
             </div>
             <div>
                 <h3 className="section-title">Ranking</h3>
-                <div className="section-container"> {/* flex */}
+                <div className="section-container">
                     <div>
-                        <span>Overall</span><br/>
-                        <span>overall_place</span>/overall_finishers<br/>
-                        <span>overall_rank</span>
+                        <span className="section-subtitle">Overall</span>
+                        <span className="section-super">{selectedRace.overall_place}</span><span className="section-detail">/{selectedRace.overall_finishers}</span><br/>
+                        <span className="section-subdetail">Overall rank: {rankPercent(selectedRace.overall_rank)}%</span>
                     </div>
                     <div>
-                        <span>Gender</span><br/>
-                        <span>gender_place</span>/gender_finishers<br/>
-                        <span>gender_rank</span>                        
+                        <span className="section-subtitle">Gender</span>
+                        <span className="section-super">{selectedRace.gender_place}</span><span className="section-detail">/{selectedRace.gender_finishers}</span><br/>
+                        <span className="section-subdetail">Gender rank: {rankPercent(selectedRace.gender_rank)}%</span>                      
                     </div>
                     <div>
-                        <span>Division</span><br/>
-                        <span>division_place</span>/division_finishers<br/>
-                        <span>division_rank</span>
+                        <span className="section-subtitle">Division</span>
+                        <span className="section-super">{selectedRace.division_place}</span><span className="section-detail">/{selectedRace.division_finishers}</span><br/>
+                        <span className="section-subdetail">Division rank: {rankPercent(selectedRace.division_rank)}%</span>   
                     </div>
                 </div>
             </div>
@@ -70,7 +73,7 @@ const RaceInstanceDetail = ({ match, races }) => {
                 </div>
             </div>
             <div>
-                <p>
+                <p className="section-footer">
                     Return to <a href="/races">Races</a>
                 </p>
             </div>

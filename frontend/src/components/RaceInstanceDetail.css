@@ -3,15 +3,15 @@
 }
 
 .section-container {
-    border: 1px solid blueviolet;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .section-container > div {
-    padding: 5px 20px;
-    margin: 0 auto;
-    width: auto;
+    flex-basis: auto;
+    width: fit-content;
 }
 
 .section-subtitle {
@@ -23,8 +23,19 @@
 
 .section-super {
     font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .section-detail {
     font-size: 0.90rem;
+}
+
+.section-subdetail {
+    font-size: 0.75rem;
+}
+
+.section-footer {
+    border-top: 1px solid #fff;
+    padding-top: 5px;
+    margin-top: 25px;
 }
