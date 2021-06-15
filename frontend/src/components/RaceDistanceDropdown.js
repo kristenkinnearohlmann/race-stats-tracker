@@ -1,12 +1,18 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import './RaceDistanceDropdown.css'
 
-const RaceDistanceDropdown = ({ raceDistances, distanceChoice, currentUserId, fetchRacesByDistance }) => {
+const RaceDistanceDropdown = ({ match, location, history, raceDistances, distanceChoice, currentUserId, fetchRacesByDistance }) => {
+    
+    const handleOnChange = event => {
+        fetchRacesByDistance({raceDistanceId: event.target.value, currentUserId: currentUserId})
+        history.push('/races')
+    }
 
     return (
         <form className="race-distance-form">
             <label>Select race distance: </label>
-            <select name="racedistance_id" id="racedistance_id" defaultValue={distanceChoice} onChange={event => fetchRacesByDistance({raceDistanceId: event.target.value, currentUserId: currentUserId})}>
+            <select name="racedistance_id" id="racedistance_id" defaultValue={distanceChoice} onChange={event => handleOnChange(event)}>
                 <option value="-1"></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {
@@ -19,4 +25,4 @@ const RaceDistanceDropdown = ({ raceDistances, distanceChoice, currentUserId, fe
     )
 }
 
-export default RaceDistanceDropdown
+export default withRouter(RaceDistanceDropdown)

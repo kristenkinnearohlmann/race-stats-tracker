@@ -4,7 +4,7 @@ import Race from './Race'
 import RaceInstanceDetail from './RaceInstanceDetail'
 import './RaceList.css'
 
-const RaceList = ({ match, races, results }) => {
+const RaceList = ({ match, location, history, races, results }) => {
     const racesWithUniqueID = [];
 
     if (races.length >= 1) {

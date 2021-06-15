@@ -39,7 +39,6 @@ export const fetchRacesByDistance = raceSearchParms => {
                 } else {
                     races = responseJSON
                 }
-                console.log(raceDistanceId)
                 dispatch( {type: 'SHOW_RACES', payload: {races: races, results: true, distance_choice: raceDistanceId}} )
             })
         }
