@@ -2,14 +2,11 @@ import React from 'react'
 import './RaceDistanceDropdown.css'
 
 const RaceDistanceDropdown = ({ raceDistances, distanceChoice, currentUserId, fetchRacesByDistance }) => {
-    // trial
-    const urlLastSegement = window.location.href.split("/").pop()
 
     return (
         <form className="race-distance-form">
             <label>Select race distance: </label>
-            {/* trial */}
-            <select name="racedistance_id" id="racedistance_id" defaultValue={distanceChoice} onChange={event => fetchRacesByDistance({raceDistanceId: event.target.value, currentUserId: currentUserId, urlLastSegement: urlLastSegement})}>
+            <select name="racedistance_id" id="racedistance_id" defaultValue={distanceChoice} onChange={event => fetchRacesByDistance({raceDistanceId: event.target.value, currentUserId: currentUserId})}>
                 <option value="-1"></option>
                 <option value="0">All</option>
                 {raceDistances.map(distance => {

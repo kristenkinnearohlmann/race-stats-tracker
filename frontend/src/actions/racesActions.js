@@ -13,16 +13,9 @@ export const fetchRaceDistances = () => {
 export const fetchRacesByDistance = raceSearchParms => {
     return (dispatch) => {
         dispatch( {type: 'LOAD_RACES'} )
-        // trial
-        debugger
-
-        const { raceDistanceId, currentUserId, urlLastSegement } = raceSearchParms
+        
+        const { raceDistanceId, currentUserId } = raceSearchParms
         let url;
-
-        if (urlLastSegement !== 'races') {
-            window.location.href = '/races'
-        }
-        debugger
 
         switch (raceDistanceId) {
             case "-1": // no selection made

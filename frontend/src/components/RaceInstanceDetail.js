@@ -10,18 +10,16 @@ const RaceInstanceDetail = ({ match, races }) => {
     return (
         <div>
             <div>
-                <h3>{selectedRace.name}</h3>
-            <span>
-                    {/* {selectedRace.name}<br/> */}
+                <h3>{selectedRace.name}<br/>
                     <span className="race-instance-subdetail">
                         {race_date_date.toLocaleDateString('en-US',options)}
                         {selectedRace.url ? " | " : ""}
                         {selectedRace.url ? <a href={selectedRace.url} target="blank">Race website</a> : ""}
                     </span>
-                </span>
+                </h3>
             </div>
             <div>
-                <h3>Race</h3>
+                <h3 className="section-title">Race</h3>
                 <div className="section-container"> {/* flex */}
                     <div> 
                         elapsed_time/gun_time
@@ -32,18 +30,21 @@ const RaceInstanceDetail = ({ match, races }) => {
                 </div>
                 <div className="section-container"> {/* flex */}
                     <div>
-                        bib_nbr
+                        <span className="section-subtitle">Bib Number</span>
+                        <span className="section-super">{selectedRace.bib_nbr}</span>
                     </div>
                     <div>
-                        age
+                        <span className="section-subtitle">Age</span>
+                        <span className="section-super">{selectedRace.age}</span>
                     </div>
                     <div>
-                        division_name
+                        <span className="section-subtitle">Division</span>
+                        <span className="section-super">{selectedRace.division_name}</span>
                     </div>
                 </div>
             </div>
             <div>
-                <h3>Ranking</h3>
+                <h3 className="section-title">Ranking</h3>
                 <div className="section-container"> {/* flex */}
                     <div>
                         <span>Overall</span><br/>
@@ -63,8 +64,8 @@ const RaceInstanceDetail = ({ match, races }) => {
                 </div>
             </div>
             <div>
-                <h3>Race Notes</h3>
-                <div id="race-notes">
+                <h3 className="section-title">Race Notes</h3>
+                <div className="section-detail">
                     {selectedRace.race_notes}
                 </div>
             </div>
