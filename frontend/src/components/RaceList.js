@@ -4,7 +4,7 @@ import Race from './Race'
 import RaceInstanceDetail from './RaceInstanceDetail'
 import './RaceList.css'
 
-const RaceList = ({ match, location, history, races, results }) => {
+const RaceList = ({ match, races, results, loading }) => {
     const racesWithUniqueID = [];
 
     if (races.length >= 1) {
@@ -23,7 +23,11 @@ const RaceList = ({ match, location, history, races, results }) => {
     const renderMain = () => {
         if (racesWithUniqueID.length === 0)
         {
-            return results ? <p className="main-msg">No results found for this distance.</p> : <p className="main-msg">Select a race distance from the list to see your races.</p>
+            if (!loading) {
+                return results ? <p className="main-msg">No results found for this distance.</p> : <p className="main-msg">Select a race distance from the list to see your races.</p>
+            } else {
+                return <p className="main-msg">Loading...</p>
+            }
         } else {
             return <Race races={racesWithUniqueID} />
         }
