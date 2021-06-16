@@ -8,6 +8,7 @@ class RaceNew extends Component {
     state = {
         current_user_id: this.props.currentUser.id,
         name: '',
+        url: '',
         race_distance_id: -1,
         race_date: '',
         elapsed_time: '',
@@ -45,10 +46,6 @@ class RaceNew extends Component {
                 <p>Add a race to your race list</p>
                 <form className="race-new-form" onSubmit={this.handleSubmit}>
                     <p>
-                        <label>Event name</label><br/>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
-                    </p>
-                    <p>
                         <label>Distance</label><br/>
                         <select name="race_distance_id" id="race_distance_id" value={this.state.race_distance_id} onChange={this.handleOnChange}>
                             <option value="-1"></option>
@@ -59,6 +56,14 @@ class RaceNew extends Component {
                                 )
                             })}
                         </select>
+                    </p>
+                    <p>
+                        <label>Event name</label><br/>
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
+                    </p>
+                    <p>
+                        <label>Event URL</label><br/>
+                            <input type="text" name="url" value={this.state.url} onChange={this.handleOnChange} />
                     </p>
                     <p>
                         <label>Event date</label><br/>
