@@ -47,9 +47,10 @@ export const fetchRacesByDistance = raceSearchParms => {
 
 export const addNewRace = raceObject => {
     return (dispatch) => {
-        const {current_user_id, name, race_distance_id, ...user_race} = {...raceObject}
+        const {current_user_id, name, url, race_distance_id, ...user_race} = {...raceObject}
         const race = {
             "name": name,
+            "url": url,
             "race_distance_id": race_distance_id
         }
         const racePostObj = {

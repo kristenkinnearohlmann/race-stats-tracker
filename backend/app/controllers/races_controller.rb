@@ -18,6 +18,7 @@ class RacesController < ApplicationController
         if user
             race = Race.find_or_create_by(name: params[:race][:name]) do |r|
                 r.race_distance_id = params[:race][:race_distance_id]
+                r.url = params[:race][:url]
             end
             params[:user_race][:race_id] = race.id
             if user.user_races.create(race_params(params[:user_race]))

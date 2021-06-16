@@ -63,7 +63,7 @@ class RaceNew extends Component {
                     </p>
                     <p>
                         <label>Event URL</label><br/>
-                            <input type="text" name="url" value={this.state.url} onChange={this.handleOnChange} />
+                        <input type="text" name="url" value={this.state.url} onChange={this.handleOnChange} />
                     </p>
                     <p>
                         <label>Event date</label><br/>
