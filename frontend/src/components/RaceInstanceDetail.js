@@ -69,7 +69,7 @@ const RaceInstanceDetail = ({ match, races }) => {
             <div>
                 <h3 className="section-title">Results</h3>
                 <div className="section-detail">
-                    <a href={selectedRace.results_url} target="_blank">{selectedRace.results_url}</a>
+                    <a href={selectedRace.results_url} target="_blank" rel="noreferrer">{selectedRace.results_url}</a>
                 </div>
             </div>
             <div>
