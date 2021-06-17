@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import { fetchRaceDistances, fetchRacesByDistance, clearRaces } from '../actions/racesActions'
 import RaceDistanceDropdown from '../components/RaceDistanceDropdown'
 import RaceList from '../components/RaceList'
-import './Races.css'
+import './containers.css'
 
 class Races extends Component {
 

@@ -1,3 +1,29 @@
+body {
+    color: #fff;
+}
+
+.app {
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.app-header {
+    background-color: #515354;
+    border-bottom: 2px solid #51D5F4;
+    color: #51D5F4;
+    font-size: 1.25rem;
+    padding: 0 10px;
+}
+
+.app-main {
+    margin: 0 auto;
+}
+
+.races-wrapper {
+    font-size: 1.5rem;
+    margin: 5px 10%;
+}
+
 .race-new-wrapper {
     font-size: 1.5rem;
     margin: 5px 10%;
