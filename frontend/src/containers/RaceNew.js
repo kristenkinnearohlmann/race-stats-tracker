@@ -43,7 +43,7 @@ class RaceNew extends Component {
 
     render() {
         return (
-            <div className="race-new-wrapper">
+            <div className="content-wrapper">
                 <p>Add a race to your race list</p>
                 <form className="race-new-form" onSubmit={this.handleSubmit}>
                     <p>

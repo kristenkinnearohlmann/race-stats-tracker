@@ -18,7 +18,7 @@ class Races extends Component {
     
     render() {
         return (
-            <div className="races-wrapper">
+            <div className="content-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} distanceChoice={this.props.distanceChoice} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
                 <Route path="/races" render={routerProps => <RaceList {...routerProps} races={this.props.races} results={this.props.results} loading={this.props.loading} />} />
             </div>

@@ -19,12 +19,7 @@ body {
     margin: 0 auto;
 }
 
-.races-wrapper {
-    font-size: 1.5rem;
-    margin: 5px 10%;
-}
-
-.race-new-wrapper {
+.content-wrapper {
     font-size: 1.5rem;
     margin: 5px 10%;
 }
