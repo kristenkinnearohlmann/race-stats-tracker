@@ -1,4 +1,4 @@
-import './containers.css'
+import './Containers.css'
 import Header from '../components/Header'
 import RaceNew from '../containers/RaceNew'
 import Races from '../containers/Races'

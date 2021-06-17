@@ -1,8 +1,7 @@
 import { React, Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRaceDistances, addNewRace } from '../actions/racesActions'
-// import './RaceNew.css'
-import './containers.css'
+import './Containers.css'
 
 class RaceNew extends Component {
 
