@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import { fetchRaceDistances, fetchRacesByDistance, clearRaces } from '../actions/racesActions'
 import RaceDistanceDropdown from '../components/RaceDistanceDropdown'
 import RaceList from '../components/RaceList'
+import Graph from '../components/Graph'
 import './Containers.css'
 
 class Races extends Component {
@@ -20,6 +21,7 @@ class Races extends Component {
         return (
             <div className="content-wrapper">
                 <RaceDistanceDropdown raceDistances={this.props.raceDistances} distanceChoice={this.props.distanceChoice} currentUserId={this.props.currentUserId} fetchRacesByDistance={this.props.fetchRacesByDistance} />
+                <Graph />
                 <Route path="/races" render={routerProps => <RaceList {...routerProps} races={this.props.races} results={this.props.results} loading={this.props.loading} />} />
             </div>
         )
