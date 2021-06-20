@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static#home'
   resources :user_races
   resources :races
   resources :race_distances
