@@ -8,12 +8,13 @@ Race Stats Tracker moves this data from trusty Excel or Google sheets into a man
 
 ## Install Instructions
 
-1. Install Rails 6.0
-1. Install Node and npm
+1. Ensure Rails 6.0 is installed on your local machine
+1. Ensure Node and npm are installed on your local machine
 1. Clone this repo to your local machine
 1. In the `backend` directory
   1. Run `bundle install`
   1. Run `rails db:migrate` to install the database
+  1. Run `rails dg:seed` to migrate test data
   1. Run `rails s` to start the server; the Rails API will serve on `localhost:3001` but there is no need to access the backend unless you would like to review the JSON data itself
 1. In the `frontend` directory
   1. Run `npm install`
