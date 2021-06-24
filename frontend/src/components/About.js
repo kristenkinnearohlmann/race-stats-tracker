@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.css'
+import CoolButton from './CoolButton'
 
 const About = () => {
     return (
@@ -29,6 +30,7 @@ const About = () => {
                     <p>
                         Project code and contribution guide is located on GitHub: <a href="https://github.com/kristenkinnearohlmann/race-stats-tracker">race-stats-tracker</a>
                     </p>
+                    <CoolButton />
                 </div>
             </div>
         </div>
