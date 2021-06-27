@@ -35,7 +35,7 @@ const RaceInstance = ({ race }) => {
                     <p>
                         Overall<br/>
                         <span className="race-instance-main-detail">{race.overall_place}<br/>
-                        <span className="race-instance-subdetail">of {race.overall_finishers}</span></span>
+                        <span className="race-instance-subdetail-block">of {race.overall_finishers}</span></span>
                     </p>
                 </div>
             </div>
