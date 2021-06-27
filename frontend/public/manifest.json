@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Race Stats Tracker",
+  "name": "Users can track information from road races they have participated in.",
   "icons": [
     {
       "src": "favicon.ico",
