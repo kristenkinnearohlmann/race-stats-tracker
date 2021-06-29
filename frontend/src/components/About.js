@@ -18,7 +18,7 @@ const About = () => {
                         <strong>Kristen Kinnear-Ohlmann</strong> is an amateur runner, developer, and data analyst from Bloomington, MN. After taking up running in earnest in 2009, she employed her love of data to create many lovely and complex Excel spreadsheets to track data in a way that conveyed meaning to her, in addition to a number of digital tools she used.
                     </p>
                     <p>
-                        Race Stats Tracker is a migration of that work to a more interative tool.
+                        Race Stats Tracker is a migration of that work to a more interative and easily available tool.
                     </p>
                     <p>
                         To contact Kristen about run coaching: <a href="mailto:focusrunning.kko@gmail.com">focusrunning.kko@gmail.com</a>
