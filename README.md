@@ -8,8 +8,10 @@ Race Stats Tracker moves this data from trusty Excel or Google sheets into a man
 
 ## Install Instructions
 
-1. Ensure Rails 6.0 is installed on your local machine
-1. Ensure Node and npm are installed on your local machine
+1. Ensure the following are installed on your machine:
+   1. Rails 6.0
+   1. Node 
+   1. npm 
 1. Clone this repo to your local machine
 1. In the `backend` directory
   1. Run `bundle install`
