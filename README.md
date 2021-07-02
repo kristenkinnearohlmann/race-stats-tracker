@@ -13,12 +13,12 @@ Race Stats Tracker moves this data from trusty Excel or Google sheets into a man
    1. Node 
    1. npm 
 1. Clone this repo to your local machine
-1. In the `backend` directory
+1. Navigate to the `backend` directory and execute the following steps:
   1. Run `bundle install`
   1. Run `rails db:migrate` to install the database
   1. Run `rails db:seed` to migrate test data
   1. Run `rails s` to start the server; the Rails API will serve on `localhost:3001` but there is no need to access the backend unless you would like to review the JSON data itself
-1. In the `frontend` directory
+1. In a new terminal window, navigate to the `frontend` directory and execute the following steps:
   1. Run `npm install`
   1. Run `npm start`; the React app will serve on `localhost:3000`
 
