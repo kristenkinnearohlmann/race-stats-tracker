@@ -1,6 +1,6 @@
 # Race Stats Tracker
 
-Amateur athletes often enjoying "tracking their runs" to see what they have accomplished. While there are many digital tools that have replaced the long-cherished analog "run logs", there are not many tools specifically for races.
+Amateur athletes often enjoy "tracking their runs" to see what they have accomplished. While there are many digital tools that have replaced the long-cherished analog "run logs", there are not many tools specifically for races.
 
 I have been keeping my own races stats, separate from my preferred digital tool, for some number of years. I wanted a way to track all race distances, view comparative information, and potentially generate some charts. In addition, I am a masters runner who can participate in the USATF Phidippides standings.
 
